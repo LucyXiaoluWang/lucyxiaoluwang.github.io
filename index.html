@@ -53,7 +53,7 @@
     max-width:var(--maxw);margin:0 auto;padding:.7rem 1.25rem;
     display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;
   }
-  .brand{font-family:var(--sans);font-weight:700;letter-spacing:.04em;font-size:1.02rem;border:none}
+  .brand{font-family:var(--sans);font-weight:700;letter-spacing:.04em;font-size:.92rem;border:none}
   .brand span{color:var(--accent)}
   nav ul{list-style:none;display:flex;gap:1.15rem;margin:0;padding:0;flex-wrap:wrap}
   nav a{font-family:var(--sans);font-size:.82rem;text-transform:uppercase;letter-spacing:.09em;
@@ -79,7 +79,7 @@
      text-transform:uppercase;margin:1.8rem 0 .6rem;font-weight:700}
 
   /* ---- Hero ---- */
-  .hero{display:flex;gap:2.2rem;align-items:flex-start;padding-top:3rem;flex-wrap:wrap}
+  .hero{display:flex;gap:2.2rem;align-items:flex-start;padding-top:1.2rem;flex-wrap:wrap}
   .hero .photo{flex:0 0 270px;max-width:270px}
   .hero .photo img{width:100%;border-radius:3px;display:block;
     box-shadow:0 6px 26px rgba(28,26,23,.18);background:var(--paper-2)}
@@ -101,8 +101,8 @@
   details.fold summary:hover{color:var(--accent)}
   details.fold[open] summary{color:var(--accent)}
 
-  .contact{font-family:var(--sans);font-size:.8rem;color:var(--muted);
-    margin-top:.9rem;text-align:center;line-height:1.5}
+  .contact{font-family:var(--sans);font-size:.85rem;color:var(--muted);
+    margin-top:1.6rem;text-align:center;line-height:1.5}
   .contact p{margin:.25rem 0}
 
   /* ---- Papers ---- */
@@ -161,16 +161,16 @@
           <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2427235">SSRN</a>
           <a href="https://twitter.com/LucyXiaolu_Wang">Twitter / X</a>
         </div>
-        <div class="contact">
-          <p>xiaoluwang <em>at</em> umass.edu</p>
-          <p>Stockbridge Hall 208B, 80 Campus Center Way, Amherst, MA 01003</p>
-        </div>
       </div>
       <div class="intro">
         <h1>Lucy Xiaolu Wang</h1>
         <div class="role">Assistant Professor, Dept of Resource Economics · University of Massachusetts Amherst</div>
         <p class="lead">I am a tenure-track Assistant Professor at the University of Massachusetts Amherst, a Faculty Research Fellow at the Max Planck Institute for Innovation and Competition (Germany), and a Faculty Associate at the Canadian Centre for Health Economics. My research focuses on the economics of innovation &amp; digitization in health care markets — national and global — particularly in the biopharmaceutical and digital health industries. I received my Ph.D. in Economics from Cornell University, an M.A. in Economics from Duke University, and a B.A. in Economics (specialty: insurance) from the Central University of Finance and Economics, Beijing.</p>
         <p>I am a co-founder and inaugural convener for the Digital Health Technology special interest group at the International Health Economics Association, and the inaugural program chair for the Innovation and Digitization program area at the American Society of Health Economists. My projects have been funded by Cornell, CUFE, Duke, the Institute for Humane Studies, the Max Planck Institute, the National Ministry of Education of China, RWJF, and UMass, among others.</p>      </div>
+    </div>
+
+    <div class="contact">
+      <p>xiaoluwang <em>at</em> umass.edu · Stockbridge Hall 208B, 80 Campus Center Way, Amherst, MA 01003</p>
     </div>
 
   </section>
@@ -401,11 +401,10 @@
 </footer>
 
 <script>
-  // Light/dark mode: follows your system setting, remembers a manual choice.
+  // Theme: DARK by default; visitors can switch to light, choice is remembered.
   (function(){
     var saved = localStorage.getItem("theme");
-    var dark = saved ? saved === "dark"
-                     : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    var dark = saved ? saved === "dark" : true;
     if (dark) document.documentElement.setAttribute("data-theme","dark");
     document.getElementById("theme-toggle").addEventListener("click", function(){
       var nowDark = document.documentElement.getAttribute("data-theme") === "dark";
