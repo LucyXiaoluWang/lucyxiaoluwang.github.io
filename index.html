@@ -19,7 +19,8 @@
     --link-underline:rgba(15,118,110,.3);
     --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
     --sans: "Optima", "Segoe UI", Candara, "Helvetica Neue", Arial, sans-serif;
-    --maxw: 880px;
+    --maxw: 980px;
+    --award:#8a2434;       /* maroon for award listings */
   }
   [data-theme="dark"]{
     --paper:#121a1c;
@@ -31,6 +32,7 @@
     --rule:#28393c;
     --header-bg:rgba(18,26,28,.92);
     --link-underline:rgba(63,193,178,.35);
+    --award:#e09aa5;
   }
   *{box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -68,7 +70,7 @@
   main{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem 5rem}
   section{padding-top:3.2rem;scroll-margin-top:4.5rem}
   h2.section-title{
-    font-family:var(--sans);font-size:.8rem;text-transform:uppercase;letter-spacing:.18em;
+    font-family:var(--sans);font-size:1.05rem;text-transform:uppercase;letter-spacing:.16em;
     color:var(--accent);margin:0 0 .2rem;font-weight:700;
   }
   h2.section-title + .rule{height:2px;background:var(--accent);width:46px;margin:.1rem 0 1.6rem;border:0}
@@ -99,12 +101,9 @@
   details.fold summary:hover{color:var(--accent)}
   details.fold[open] summary{color:var(--accent)}
 
-  .factbox{background:var(--paper-2);border:1px solid var(--rule);border-radius:4px;
-    padding:1.1rem 1.3rem;margin-top:1.8rem;font-size:.96rem}
-  .factbox h4{margin-top:0}
-  .factbox ul{margin:.2rem 0 1rem;padding-left:1.1rem}
-  .factbox li{margin:.15rem 0}
-  .factbox p{margin:.2rem 0}
+  .contact{font-family:var(--sans);font-size:.8rem;color:var(--muted);
+    margin-top:.9rem;text-align:center;line-height:1.5}
+  .contact p{margin:.25rem 0}
 
   /* ---- Papers ---- */
   .paper{margin:0 0 1.5rem;padding-bottom:1.2rem;border-bottom:1px solid var(--rule)}
@@ -112,8 +111,8 @@
   .paper .ttl{font-weight:700}
   .paper .meta{color:var(--muted);font-size:.95rem}
   .paper .dl{font-family:var(--sans);font-size:.85rem;color:var(--muted);margin-top:.35rem}
-  .badge{display:inline-block;font-family:var(--sans);font-size:.72rem;letter-spacing:.04em;
-    background:var(--accent);color:#fff;padding:.08rem .45rem;border-radius:3px;margin:.1rem .3rem .1rem 0;border:0}
+  .badge{display:block;font-family:var(--sans);font-size:.82rem;letter-spacing:.02em;
+    color:var(--award);font-weight:700;margin:.2rem 0 0;background:none;padding:0;border:0}
   ul.tight{margin:.3rem 0 0;padding-left:1.1rem}
   ul.tight li{margin:.25rem 0}
   p.lead{font-size:1.05rem}
@@ -160,28 +159,20 @@
           <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2427235">SSRN</a>
           <a href="https://twitter.com/LucyXiaolu_Wang">Twitter / X</a>
         </div>
+        <div class="contact">
+          <p>xiaoluwang <em>at</em> umass.edu</p>
+          <p>Stockbridge Hall 208B<br>80 Campus Center Way<br>Amherst, MA 01003</p>
+        </div>
       </div>
       <div class="intro">
         <h1>Lucy Xiaolu Wang</h1>
         <div class="role">Assistant Professor of Economics · University of Massachusetts Amherst</div>
         <p class="lead">I am a tenure-track Assistant Professor at the University of Massachusetts Amherst, a Faculty Research Fellow at the Max Planck Institute for Innovation and Competition (Germany), and a Faculty Associate at the Canadian Centre for Health Economics. My research focuses on the economics of innovation &amp; digitization in health care markets — national and global — particularly in the biopharmaceutical and digital health industries.</p>
         <p>I am a co-founder and inaugural convener for the Digital Health Technology special interest group at the International Health Economics Association, and the inaugural program chair for the Innovation and Digitization program area at the American Society of Health Economists. My projects have been funded by Cornell, CUFE, Duke, the Institute for Humane Studies, the Max Planck Institute, the National Ministry of Education of China, RWJF, and UMass, among others.</p>
+        <p>I received my Ph.D. in Economics from Cornell University, an M.A. in Economics from Duke University, and a B.A. in Economics (specialty: insurance) from the Central University of Finance and Economics, Beijing. My research and teaching fields are health economics, innovation economics/management, industrial organization, public finance, and applied econometrics.</p>
       </div>
     </div>
 
-    <div class="factbox">
-      <h4>Education</h4>
-      <ul>
-        <li>Ph.D. Economics, Cornell University, Ithaca, NY, USA</li>
-        <li>M.A. Economics, Duke University, Durham, NC, USA</li>
-        <li>B.A. Economics (specialty: Insurance), CUFE, Beijing, China</li>
-      </ul>
-      <h4>Research &amp; Teaching Fields</h4>
-      <p>Health Economics · Innovation Economics/Management · Industrial Organization · Public Finance · Applied Econometrics</p>
-      <h4>Contact</h4>
-      <p>Email: xiaoluwang <em>at</em> umass.edu</p>
-      <p>Stockbridge Hall 208B, 80 Campus Center Way, Amherst, MA 01003</p>
-    </div>
   </section>
 
   <!-- RESEARCH -->
@@ -194,7 +185,6 @@
     <div class="paper">
       <div class="ttl">Health IT Diffusion and Physician Density</div>
       <div class="meta">with Jason Huh (RPI), Jianjing Lin (UMass Amherst) — <em>in active revision</em></div>
-      <span class="badge">Best Young Researcher Award, CHITA 2025</span>
       <div class="dl">Download: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5159315">latest draft</a> · slides (tba). Featured in <a href="https://www.aeaweb.org/conference/videos/2026/lucy_wang">AEA annual meeting poster session highlight videos</a>, 2026.</div>
     </div>
 
@@ -361,8 +351,8 @@
       <li>Fellow Mentor &amp; Leader for Graduate Research and Teaching Fellows, Cornell, 2017–2018</li>
     </ul>
 
-    <h4>Professional Service — Refereeing (selected)</h4>
-    <p>American Economic Review; AER: Insights; American Journal of Health Economics; Health Economics; Journal of Development Economics; Journal of Health Economics; Journal of Labor Economics; Management Science; Manufacturing &amp; Service Operations Management; Production and Operations Management; Research Policy; Information Systems Research; International Journal of Industrial Organization, among others.</p>
+    <h4>Professional Service — Refereeing</h4>
+    <p>American Economic Review; American Economic Review: Insights; American Journal of Health Economics; Applied Economics; Applied Economics Letters; Decision Support Systems; Demographic Research; Economics Bulletin; Frontiers in Digital Health; Frontiers in Public Health; Frontiers in Research Metrics &amp; Analytics; Health Economics; Health Economics, Policy and Law; Health Information Management Journal; Health Policy; Information Systems Research; INQUIRY; International Journal of Drug Policy; International Journal of Industrial Organization; Journal of Development Economics; Journal of Health Economics; Journal of Labor Economics; Management Science; Manufacturing &amp; Service Operations Management; Production and Operations Management; Research Policy; Scientific Reports; Social Science Research.</p>
 
     <h4>Editorial &amp; Committees</h4>
     <ul class="tight">
@@ -380,13 +370,8 @@
     <p>I am a co-founder and inaugural convener (ECR) for the Digital Health Technology (DHT) special interest group at the International Health Economics Association (est. 2024). I serve as the inaugural program chair for the ASHEcon Innovation and Digitization program area (est. 2024), and I currently organize the UMass Amherst Health Works-in-Progress seminars.</p>
 
     <details class="fold">
-    <summary>UMass Amherst Health Economics Seminars (recent)</summary>
-    <ul class="tight">
-      <li><strong>Spring 2026 health WIPS:</strong> 2/11 Deba Mohapatra; 2/25 Qian Zhao; 3/4 Ed Norton (Michigan); 3/11 Mike Eber; 3/25 Jacob Dorn (Cornell); 4/1 Fangli Geng (Brown); 4/8 Michael Sorrell; 4/15 Sindhoora Prakash; 5/6 mixer.</li>
-      <li><strong>Spring 2026 dept seminar:</strong> 2/6 Alex Chan (HBS).</li>
-      <li><strong>Fall 2025 dept seminar:</strong> 9/19 Leila Agha (Harvard); 9/26 Gautam Gowrisankaran (Columbia).</li>
-      <li><strong>Fall 2025 health WIPS:</strong> 10/17 Said Arslan; 10/24 Randy Ellis (BU); 11/21 Rebekah Dix (Yale); 12/12 Seyoun Kim.</li>
-    </ul>
+    <summary>UMass Amherst Health Economics Seminars</summary>
+    <p>Recent guests and presenters include Deba Mohapatra, Qian Zhao, Ed Norton (Michigan), Mike Eber, Jacob Dorn (Cornell), Fangli Geng (Brown), Michael Sorrell, Sindhoora Prakash, Alex Chan (HBS), Leila Agha (Harvard), Gautam Gowrisankaran (Columbia), Said Arslan, Randy Ellis (BU), Rebekah Dix (Yale), and Seyoun Kim.</p>
     </details>
 
     <details class="fold">
