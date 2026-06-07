@@ -1,1 +1,429 @@
-Hello World
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Economics | Lucy Xiaolu WANG</title>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='5' fill='%230f766e'/><text x='16' y='22' font-family='Georgia,serif' font-size='15' fill='%23ffffff' text-anchor='middle' font-weight='bold'>LW</text></svg>">
+<meta name="description" content="Lucy Xiaolu Wang — tenure-track Assistant Professor at UMass Amherst. Research on the economics of innovation and digitization in health care markets.">
+<style>
+  :root{
+    --paper:#ffffff;       /* clean white background */
+    --paper-2:#eef6f6;     /* light teal tint (boxes) */
+    --ink:#1f2426;
+    --muted:#5a6568;
+    --accent:#0f766e;      /* teal */
+    --accent-soft:#14948a;
+    --rule:#d9e4e4;
+    --header-bg:rgba(255,255,255,.92);
+    --link-underline:rgba(15,118,110,.3);
+    --serif: Georgia, "Iowan Old Style", "Palatino Linotype", Palatino, "Times New Roman", serif;
+    --sans: "Optima", "Segoe UI", Candara, "Helvetica Neue", Arial, sans-serif;
+    --maxw: 880px;
+  }
+  [data-theme="dark"]{
+    --paper:#121a1c;
+    --paper-2:#1a2629;
+    --ink:#e7eceb;
+    --muted:#9fb0ae;
+    --accent:#3fc1b2;
+    --accent-soft:#63d2c6;
+    --rule:#28393c;
+    --header-bg:rgba(18,26,28,.92);
+    --link-underline:rgba(63,193,178,.35);
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:var(--serif);font-size:17px;line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--accent);text-decoration:none;border-bottom:1px solid var(--link-underline)}
+  a:hover{color:var(--accent-soft);border-bottom-color:var(--accent-soft)}
+
+  /* ---- Nav ---- */
+  header{
+    position:sticky;top:0;z-index:50;background:var(--header-bg);
+    backdrop-filter:saturate(140%) blur(6px);border-bottom:1px solid var(--rule);
+  }
+  .nav{
+    max-width:var(--maxw);margin:0 auto;padding:.7rem 1.25rem;
+    display:flex;align-items:baseline;justify-content:space-between;gap:1rem;flex-wrap:wrap;
+  }
+  .brand{font-family:var(--sans);font-weight:700;letter-spacing:.04em;font-size:1.02rem;border:none}
+  .brand span{color:var(--accent)}
+  nav ul{list-style:none;display:flex;gap:1.15rem;margin:0;padding:0;flex-wrap:wrap}
+  nav a{font-family:var(--sans);font-size:.82rem;text-transform:uppercase;letter-spacing:.09em;
+    color:var(--muted);border:none}
+  nav a:hover{color:var(--accent)}
+  #theme-toggle{
+    font-family:var(--sans);font-size:.78rem;cursor:pointer;
+    background:none;border:1px solid var(--rule);border-radius:3px;
+    color:var(--muted);padding:.15rem .55rem;letter-spacing:.05em;
+  }
+  #theme-toggle:hover{color:var(--accent);border-color:var(--accent)}
+
+  /* ---- Layout ---- */
+  main{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem 5rem}
+  section{padding-top:3.2rem;scroll-margin-top:4.5rem}
+  h2.section-title{
+    font-family:var(--sans);font-size:.8rem;text-transform:uppercase;letter-spacing:.18em;
+    color:var(--accent);margin:0 0 .2rem;font-weight:700;
+  }
+  h2.section-title + .rule{height:2px;background:var(--accent);width:46px;margin:.1rem 0 1.6rem;border:0}
+  h3{font-size:1.28rem;margin:2.2rem 0 .4rem;font-weight:700}
+  h4{font-family:var(--sans);font-size:.95rem;letter-spacing:.02em;color:var(--muted);
+     text-transform:uppercase;margin:1.8rem 0 .6rem;font-weight:700}
+
+  /* ---- Hero ---- */
+  .hero{display:flex;gap:2.2rem;align-items:flex-start;padding-top:3rem;flex-wrap:wrap}
+  .hero .photo{flex:0 0 270px;max-width:270px}
+  .hero .photo img{width:100%;border-radius:3px;display:block;
+    box-shadow:0 6px 26px rgba(28,26,23,.18);background:var(--paper-2)}
+  .hero .intro{flex:1;min-width:280px}
+  .hero h1{font-size:2.3rem;line-height:1.1;margin:.2rem 0 .3rem;letter-spacing:-.01em}
+  .hero .role{font-family:var(--sans);color:var(--muted);font-size:.95rem;margin-bottom:1rem}
+  .links{display:grid;grid-template-columns:1fr 1fr;
+    gap:.45rem;font-family:var(--sans);font-size:.83rem;margin:.9rem 0 0}
+  .links a{border:1px solid var(--rule);padding:.3rem .6rem;border-radius:4px;
+    color:var(--accent);text-align:center;white-space:nowrap}
+  .links a:hover{background:var(--accent);color:#fff;border-color:var(--accent)}
+
+  details.fold{margin:.6rem 0 1rem}
+  details.fold summary{
+    cursor:pointer;font-family:var(--sans);font-size:.95rem;font-weight:700;
+    letter-spacing:.02em;color:var(--muted);text-transform:uppercase;
+    padding:.35rem 0;list-style-position:outside;
+  }
+  details.fold summary:hover{color:var(--accent)}
+  details.fold[open] summary{color:var(--accent)}
+
+  .factbox{background:var(--paper-2);border:1px solid var(--rule);border-radius:4px;
+    padding:1.1rem 1.3rem;margin-top:1.8rem;font-size:.96rem}
+  .factbox h4{margin-top:0}
+  .factbox ul{margin:.2rem 0 1rem;padding-left:1.1rem}
+  .factbox li{margin:.15rem 0}
+  .factbox p{margin:.2rem 0}
+
+  /* ---- Papers ---- */
+  .paper{margin:0 0 1.5rem;padding-bottom:1.2rem;border-bottom:1px solid var(--rule)}
+  .paper:last-child{border-bottom:0}
+  .paper .ttl{font-weight:700}
+  .paper .meta{color:var(--muted);font-size:.95rem}
+  .paper .dl{font-family:var(--sans);font-size:.85rem;color:var(--muted);margin-top:.35rem}
+  .badge{display:inline-block;font-family:var(--sans);font-size:.72rem;letter-spacing:.04em;
+    background:var(--accent);color:#fff;padding:.08rem .45rem;border-radius:3px;margin:.1rem .3rem .1rem 0;border:0}
+  ul.tight{margin:.3rem 0 0;padding-left:1.1rem}
+  ul.tight li{margin:.25rem 0}
+  p.lead{font-size:1.05rem}
+
+  footer{border-top:1px solid var(--rule);text-align:center;color:var(--muted);
+    font-family:var(--sans);font-size:.82rem;padding:2rem 1rem;margin-top:2rem}
+
+  @media (max-width:640px){
+    body{font-size:16px}
+    .hero{gap:1.4rem}
+    .hero .photo{flex:0 0 150px;max-width:150px}
+    .hero h1{font-size:1.8rem}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <a class="brand" href="#home">Lucy Xiaolu <span>Wang</span></a>
+    <nav><ul>
+      <li><a href="#home">Home</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#teaching">Teaching</a></li>
+      <li><a href="#service">Service</a></li>
+      <li><a href="#seminars">Seminars</a></li>
+      <li><button id="theme-toggle" title="Switch light/dark mode">◐ Theme</button></li>
+    </ul></nav>
+  </div>
+</header>
+
+<main>
+
+  <!-- HOME -->
+  <section id="home">
+    <div class="hero">
+      <div class="photo">
+        <img src="assets/lucy-photo.jpg" alt="Lucy Xiaolu Wang">
+        <div class="links">
+          <a href="files/cv.pdf">Curriculum Vitae</a>
+          <a href="https://github.com/LucyXiaoluWang">GitHub</a>
+          <a href="https://scholar.google.com/citations?user=M0QlVjcAAAAJ&hl=en">Google Scholar</a>
+          <a href="https://www.linkedin.com/in/lucy-xiaolu-wang-a1481735/">LinkedIn</a>
+          <a href="https://papers.ssrn.com/sol3/cf_dev/AbsByAuth.cfm?per_id=2427235">SSRN</a>
+          <a href="https://twitter.com/LucyXiaolu_Wang">Twitter / X</a>
+        </div>
+      </div>
+      <div class="intro">
+        <h1>Lucy Xiaolu Wang</h1>
+        <div class="role">Assistant Professor of Economics · University of Massachusetts Amherst</div>
+        <p class="lead">I am a tenure-track Assistant Professor at the University of Massachusetts Amherst, a Faculty Research Fellow at the Max Planck Institute for Innovation and Competition (Germany), and a Faculty Associate at the Canadian Centre for Health Economics. My research focuses on the economics of innovation &amp; digitization in health care markets — national and global — particularly in the biopharmaceutical and digital health industries.</p>
+        <p>I am a co-founder and inaugural convener for the Digital Health Technology special interest group at the International Health Economics Association, and the inaugural program chair for the Innovation and Digitization program area at the American Society of Health Economists. My projects have been funded by Cornell, CUFE, Duke, the Institute for Humane Studies, the Max Planck Institute, the National Ministry of Education of China, RWJF, and UMass, among others.</p>
+      </div>
+    </div>
+
+    <div class="factbox">
+      <h4>Education</h4>
+      <ul>
+        <li>Ph.D. Economics, Cornell University, Ithaca, NY, USA</li>
+        <li>M.A. Economics, Duke University, Durham, NC, USA</li>
+        <li>B.A. Economics (specialty: Insurance), CUFE, Beijing, China</li>
+      </ul>
+      <h4>Research &amp; Teaching Fields</h4>
+      <p>Health Economics · Innovation Economics/Management · Industrial Organization · Public Finance · Applied Econometrics</p>
+      <h4>Contact</h4>
+      <p>Email: xiaoluwang <em>at</em> umass.edu</p>
+      <p>Stockbridge Hall 208B, 80 Campus Center Way, Amherst, MA 01003</p>
+    </div>
+  </section>
+
+  <!-- RESEARCH -->
+  <section id="research">
+    <h2 class="section-title">Research</h2><hr class="rule">
+    <p>I use rich institutional detail and novel data on health care markets to answer theory-motivated, policy-relevant empirical questions. My agenda aims to understand innovation in markets with high R&amp;D investment, heavy regulation, large financial burden, and important implications for social welfare and firms' decisions.</p>
+
+    <h3>Working Papers</h3>
+
+    <div class="paper">
+      <div class="ttl">Health IT Diffusion and Physician Density</div>
+      <div class="meta">with Jason Huh (RPI), Jianjing Lin (UMass Amherst) — <em>in active revision</em></div>
+      <span class="badge">Best Young Researcher Award, CHITA 2025</span>
+      <div class="dl">Download: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=5159315">latest draft</a> · slides (tba). Featured in <a href="https://www.aeaweb.org/conference/videos/2026/lucy_wang">AEA annual meeting poster session highlight videos</a>, 2026.</div>
+    </div>
+
+    <div class="paper">
+      <div class="ttl">Patent Management and Licensing in China: New Evidence from Field Surveys</div>
+      <div class="meta">with Xia Liu (Tongji), Xinmiao Yu (Tongji), Dietmar Harhoff (MPI)</div>
+      <div class="dl">Download: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6538526">latest draft</a>. First field-based survey of patent management and licensing in China (the Shanghai Patent Survey).</div>
+    </div>
+
+    <h3>Peer-reviewed Journal Articles</h3>
+
+    <div class="paper">
+      <div class="ttl">The Organization of Innovation: Incomplete Contracts and the Outsourcing Decision</div>
+      <div class="meta">2026, American Economic Journal: Microeconomics — with Thomas Jungbauer (Cornell), Sean Nicholson (Cornell), June Pan (Visa), Michael Waldman (Cornell)</div>
+      <div class="dl">Download: <a href="https://www.aeaweb.org/articles?id=10.1257/mic.20240053">published version</a> · <a href="https://www.nber.org/papers/w28379">NBER WP</a> · <a href="files/slides-organization-innovation.pdf">slides</a>.</div>
+    </div>
+
+    <div class="paper">
+      <div class="ttl">Legalization and Innovation in the Cannabis Market</div>
+      <div class="meta">2026, International Journal of Industrial Organization — with Nathan Chan (UMass Amherst)</div>
+      <div class="dl">Download: <a href="https://doi.org/10.1016/j.ijindorg.2026.103272">published version</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4373615">MPI discussion paper</a>.
+      Media: <a href="https://www.umass.edu/news/article/not-your-parents-cannabis-legalization-lights-innovation-not-clinical-research">news@UMass</a> · <a href="https://theconversation.com/cannabis-legalization-spurs-innovation-but-not-always-in-ways-that-benefit-patients-or-public-health-277422">The Conversation</a> · <a href="https://www.forbes.com/sites/dariosabaghi/2026/04/26/does-cannabis-legalization-spur-more-innovation-than-medical-research/">Forbes</a>.</div>
+    </div>
+
+    <div class="paper">
+      <div class="ttl">Marketing Authorization and Strategic Patenting: Evidence from Pharmaceuticals</div>
+      <div class="meta">2025, Journal of Public Economics — with Dennis Byrski (MPI alum)</div>
+      <span class="badge">2024 ASHEcon Program Chair Award</span>
+      <div class="dl">Download: <a href="https://doi.org/10.1016/j.jpubeco.2025.105415">published version</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4638115">MPI discussion paper</a> · <a href="files/slides-marketing-authorization.pdf">slides</a>.
+      Featured in a <a href="https://ip.jotwell.com/clinical-trial-transparency-and-patent-prior-art/">Jotwell review</a> by Stanford Law Prof. Lisa Ouellette (4/2026). Top 5% of all research outputs scored by <a href="https://www.altmetric.com/details/178053311">Altmetric</a>.</div>
+    </div>
+
+    <div class="paper">
+      <div class="ttl">Procurement Institutions and Essential Drug Supply in Low and Middle-Income Countries</div>
+      <div class="meta">2025, Journal of Health Economics — with Nahim Bin Zahur (Queen's University, Canada)</div>
+      <span class="badge">2023 IHEA Adam Wagstaff Prize Winner</span>
+      <div class="dl">Download: <a href="https://doi.org/10.1016/j.jhealeco.2025.102996">published version</a> · <a href="https://ssrn.com/abstract=3926761">MPI discussion paper</a> · <a href="files/slides-procurement.pdf">slides</a>.
+      Talks: Stanford APARC–Peking Univ <a href="https://www.youtube.com/watch?v=s8zkMtDIRlc">webinar</a>. Media: <a href="https://www.umass.edu/news/article/pooled-buying-can-reduce-costs-life-saving-drugs-planning-key">news@UMass</a> · <a href="https://theconversation.com/when-developing-countries-band-together-lifesaving-drugs-become-cheaper-and-easier-to-buy-with-trade-offs-255383">The Conversation</a>.</div>
+    </div>
+
+    <div class="paper">
+      <div class="ttl">A Cost-Benefit Analysis of the Medicines Patent Pool</div>
+      <div class="meta">2023, Economics Bulletin</div>
+      <div class="dl">Download: <a href="http://www.accessecon.com/Pubs/EB/2023/Volume43/EB-23-V43-I3-P111.pdf">published version</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4262457">MPI discussion paper</a>. Structural part split from an <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3426554">earlier SSRN draft</a>.</div>
+    </div>
+
+    <div class="paper">
+      <div class="ttl">Human Mediation Leads to Higher Compliance in Digital Mental Health: Field Evidence from India</div>
+      <div class="meta">2023, Frontiers in Behavioral Economics — with Chirantan Chatterjee (Sussex), Marina Chugunova (MPI), Mainak Ghosh (MPI), Abhay Singhal (TickTalkTo)</div>
+      <div class="dl">Download: <a href="https://doi.org/10.3389/frbhe.2023.1232462">published version</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4311182">SSRN WP</a>.</div>
+    </div>
+
+    <div class="paper">
+      <div class="ttl">Collaborating Neuroscience Online: The Case of the Human Brain Project Forum</div>
+      <div class="meta">2022, PLOS ONE — with Ann-Christin Kreyer (MPI; LMU Munich)</div>
+      <div class="dl">Download: <a href="https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0278402">published version</a> · <a href="https://ssrn.com/abstract=4126273">MPI discussion paper</a> · <a href="https://github.com/LucyXiaoluWang/HBP_Forum">code/data repo</a>.
+      Media: <a href="https://www.umass.edu/social-sciences/news/lucy-xiaolu-wang-publishes-new-paper-plos-one">news@UMass</a> · <a href="https://theconversation.com/building-better-brain-collaboration-online-despite-scientific-squabbles-the-decade-long-human-brain-project-brought-measurable-success-to-neuroscience-collaboration-196473">The Conversation</a>. Top 5% on <a href="https://www.altmetric.com/details/139811989">Altmetric</a>.</div>
+    </div>
+
+    <div class="paper">
+      <div class="ttl">Global Drug Diffusion and Innovation with the Medicines Patent Pool</div>
+      <div class="meta">2022, Journal of Health Economics</div>
+      <span class="badge">AOM Best Paper Proceedings 2021</span>
+      <span class="badge">Best Paper Award, Wharton Innovation Doctoral Symposium 2019</span>
+      <span class="badge">Young Scholar Best Paper Award, EPIP (ETH Zürich &amp; EPFL) 2019</span>
+      <span class="badge">Best Student Paper Nominee, Antitrust Writing Awards (Concurrences) 2020</span>
+      <div class="dl">Download: <a href="https://doi.org/10.1016/j.jhealeco.2022.102671">published version</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=4016897">MPI discussion paper</a> · <a href="files/slides-mpp-60min.pdf">slides (60 min)</a>.
+      Media: <a href="https://www.umass.edu/news/article/umass-amherst-economist-finds-medicines-patent-pool-has-increased-generic-drug-access">news@UMass</a> · <a href="https://medicalxpress.com/news/2022-12-countering-pharma-expensive-gaming-drug.html">Medical Xpress</a>. Top 5% on <a href="https://www.altmetric.com/details/134099144">Altmetric</a>.</div>
+    </div>
+
+    <div class="paper">
+      <div class="ttl">U.S. State Approaches to Cannabis Licensing</div>
+      <div class="meta">2022, International Journal of Drug Policy — with Nicholas J. Wilson (LMU Munich)</div>
+      <div class="dl">Download: <a href="https://doi.org/10.1016/j.drugpo.2022.103755">published version</a> · <a href="https://ssrn.com/abstract=4125055">MPI discussion paper</a> · <a href="files/slides-cannabis-licensing.pdf">slides</a> · <a href="https://github.com/LucyXiaoluWang/US_state_cannabis_licensing">data repository</a>.</div>
+    </div>
+
+    <div class="paper">
+      <div class="ttl">The Complementarity of Drug Monitoring Programs and Health IT for Reducing Opioid-Related Mortality and Morbidity</div>
+      <div class="meta">2021, Health Economics</div>
+      <span class="badge">AOM Best Paper Proceedings 2019</span>
+      <span class="badge">Outstanding Student Paper Award (William H. Newman Award Divisional Nominee) 2019</span>
+      <span class="badge">Finalist, Best Theory-to-Practice Paper, AOM Health Care Division 2019</span>
+      <div class="dl">Download: <a href="https://onlinelibrary.wiley.com/doi/10.1002/hec.4360">published version</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3176809">MPI discussion paper</a> · <a href="files/slides-opioid-hit.pdf">slides</a>. Cited in the 2026 <a href="https://www.cbo.gov/publication/60889">CBO report</a> on the opioid crisis.</div>
+    </div>
+
+    <div class="paper">
+      <div class="ttl">The Secret Menu in Health Care: A Cash Market for Imaging in California</div>
+      <div class="meta">2020, INQUIRY — with Jordan Epstein (Stroll Health), Sean Nicholson (Cornell), Katherine Hempstead (RWJF), Sam Asin (Stroll Health)</div>
+      <div class="dl">Download: <a href="https://journals.sagepub.com/doi/10.1177/0046958020981449">published version</a> · <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3762548">MPI discussion paper</a> · <a href="files/slides-secret-menu.pdf">slides</a>.</div>
+    </div>
+
+    <h3>Peer-reviewed Policy Reports &amp; Notes</h3>
+    <div class="paper">
+      <div class="ttl">Digital Interventions in the Health Sector: Country Cases and Policy Discussions</div>
+      <div class="meta">2023, IMF Notes — with Carolina Bloch (IMF)</div>
+      <div class="dl">Download: <a href="https://www.imf.org/en/Publications/IMF-Notes/Issues/2023/10/30/Digital-Interventions-in-the-Health-Sector-Country-Cases-and-Policy-Discussions-537567">published version</a> · <a href="https://ssrn.com/abstract=4576598">SSRN working paper</a>.</div>
+    </div>
+
+    <h3>Best Paper Proceedings</h3>
+    <ul class="tight">
+      <li>Medicines Patent Pool and HIV Drug Cocktail Diffusion and Innovation, 2021, <a href="https://journals.aom.org/doi/abs/10.5465/AMBPP.2021.36?journalCode=amproc">Best Paper Proceedings of the 81st AOM Annual Meeting</a> (top ≤10%).</li>
+      <li>The Complementarity of Health Information &amp; HIT for Reducing Opioid-Related Mortality and Morbidity, 2019, <a href="https://journals.aom.org/doi/abs/10.5465/AMBPP.2019.56">Best Paper Proceedings of the 79th AOM Annual Meeting</a> (top ≤10%).</li>
+    </ul>
+
+    <h3>Book Chapters</h3>
+    <div class="paper">
+      <div class="ttl">Manufacturing Fetishism: The Neo-Mercantilist Preoccupation with Protecting Manufacturing</div>
+      <div class="meta">2015 — with Alecia W. Cassidy and Edward Tower, in <em>The Region and Trade: New Analytical Directions</em>, World Scientific, pp. 137–175</div>
+      <div class="dl">Download: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=2833529">Duke (ERID) working paper</a> · <a href="https://www.worldscientific.com/worldscibooks/10.1142/8863">publisher's site</a>.</div>
+    </div>
+
+    <h3>Technical Memos</h3>
+    <div class="paper">
+      <div class="ttl">Patent Classification Systems and Technological Categorization: An Overview and Update</div>
+      <div class="dl">Download: <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3220033">SSRN</a> · <a href="https://github.com/LucyXiaoluWang/patents_tech_categorization">data</a>.</div>
+    </div>
+  </section>
+
+  <!-- TEACHING -->
+  <section id="teaching">
+    <h2 class="section-title">Teaching</h2><hr class="rule">
+    <p>In my learning experience, research (knowledge creation) and teaching (knowledge diffusion) are often complements. While researching innovation, teaching offers me the opportunity to understand creativity — how innovative ideas can be generated in the first place. I believe highly motivated and creative learners are essential for future innovation.</p>
+
+    <h4>Teaching Fellowships &amp; Recognition</h4>
+    <ul class="tight">
+      <li>UMass Amherst Public Interest Technology Initiative (<a href="https://groups.cs.umass.edu/pit/">PIT@UMass</a>) inaugural faculty fellowship, 2022</li>
+      <li>CU-CIRTL <a href="https://futurefaculty.cornell.edu/">Scholar Certificate Award</a> (first awardee in economics), Cornell, Nov. 2018</li>
+      <li>Graduate Teaching Assistant Fellowship (fellow mentor), Center for Teaching Innovation, Cornell, 2017–2018</li>
+      <li>Graduate Research and Teaching Fellowship, Center for Teaching Excellence, Cornell, 2016–2017</li>
+      <li><a href="https://gradschool.cornell.edu/spotlights/lucy-wang/">Graduate Student Spotlight</a>, Cornell Graduate School, Apr. 2017</li>
+    </ul>
+
+    <h4>Instructor — Undergraduate &amp; Graduate Courses</h4>
+    <ul class="tight">
+      <li>Topics in Advanced Econometrics (Ph.D. Econometrics III), UMass Amherst, F24, F25</li>
+      <li>Intermediate Statistics for Business and Economics (undergrad), UMass Amherst, S&amp;F22, F23, F24, F25</li>
+      <li>Health Economics (upper-level undergrad), UMass Amherst, F21–F25</li>
+      <li>Honors Thesis (primary advisor / committee chair), UMass Amherst, F23–S25</li>
+      <li>Independent Study / Graduate Thesis, UMass Amherst, S22–S26</li>
+      <li>Mathematics Review for Management (MBA), Johnson Business School, Cornell, 2018</li>
+    </ul>
+
+    <h4>Teaching Assistant / Grader (selected)</h4>
+    <ul class="tight">
+      <li>Microeconomics for Management (MBA, head TA), Prof. Michael Waldman, Cornell, Fall 2018</li>
+      <li>Microeconomics for Management (Finance EMBA), Cornell–Tsinghua, 2016 &amp; 2017</li>
+      <li>Empirical Strategies for Policy Research II (Ph.D.), Prof. Zhuan Pei, Cornell, Spring 2018</li>
+      <li>Introductory Microeconomics, Prof. Jennifer Wissink, Cornell, Fall 2014</li>
+    </ul>
+
+    <h4>Case &amp; Teaching Materials</h4>
+    <p>"Connecting with Reality: Using Mini-Case Study Approach to Facilitate and Assess Student Learning," 2018, Cornell University Classroom Research Working Paper Series, Vol. 6.</p>
+  </section>
+
+  <!-- SERVICE -->
+  <section id="service">
+    <h2 class="section-title">Service</h2><hr class="rule">
+
+    <h4>Mentoring</h4>
+    <ul class="tight">
+      <li>Trained Facilitator, Graduate School's Research Mentor Training, UMass, 2023</li>
+      <li>Co-organizer &amp; Panelist, AEA CSWEP Mentoring Workshop for Women &amp; Non-Binary PhD Students in Economics, 2022</li>
+      <li>Faculty Mentor, AEA CSWEP Mentoring Workshop in Health Economics &amp; Health Policy, Fall 2021</li>
+      <li>Fellow Mentor &amp; Leader for Graduate Research and Teaching Fellows, Cornell, 2017–2018</li>
+    </ul>
+
+    <h4>Professional Service — Refereeing (selected)</h4>
+    <p>American Economic Review; AER: Insights; American Journal of Health Economics; Health Economics; Journal of Development Economics; Journal of Health Economics; Journal of Labor Economics; Management Science; Manufacturing &amp; Service Operations Management; Production and Operations Management; Research Policy; Information Systems Research; International Journal of Industrial Organization, among others.</p>
+
+    <h4>Editorial &amp; Committees</h4>
+    <ul class="tight">
+      <li>Associate Editor, European Journal of Health Economics</li>
+      <li>Scientific Review Committee, ASHEcon Conference, 2018–2024; AOM Conference, 2018</li>
+      <li>Advisory board member, <a href="https://www.ip.mpg.de/en/research/innovation-and-entrepreneurship-research/rise-workshop.html">RISE Workshop</a>, 2021–present</li>
+      <li>Co-founder, <a href="https://healtheconomics.org/sigs/economics-of-digital-health-technology/">IHEA Digital Health Technology SIG</a>, 2024 &amp; inaugural ECR convener</li>
+      <li>Co-chair &amp; co-organizer, <a href="https://patentpdw.wordpress.com/workshops/">AOM Patent PDW</a>, 2023 &amp; 2024</li>
+    </ul>
+  </section>
+
+  <!-- SEMINARS -->
+  <section id="seminars">
+    <h2 class="section-title">Seminars</h2><hr class="rule">
+    <p>I am a co-founder and inaugural convener (ECR) for the Digital Health Technology (DHT) special interest group at the International Health Economics Association (est. 2024). I serve as the inaugural program chair for the ASHEcon Innovation and Digitization program area (est. 2024), and I currently organize the UMass Amherst Health Works-in-Progress seminars.</p>
+
+    <details class="fold">
+    <summary>UMass Amherst Health Economics Seminars (recent)</summary>
+    <ul class="tight">
+      <li><strong>Spring 2026 health WIPS:</strong> 2/11 Deba Mohapatra; 2/25 Qian Zhao; 3/4 Ed Norton (Michigan); 3/11 Mike Eber; 3/25 Jacob Dorn (Cornell); 4/1 Fangli Geng (Brown); 4/8 Michael Sorrell; 4/15 Sindhoora Prakash; 5/6 mixer.</li>
+      <li><strong>Spring 2026 dept seminar:</strong> 2/6 Alex Chan (HBS).</li>
+      <li><strong>Fall 2025 dept seminar:</strong> 9/19 Leila Agha (Harvard); 9/26 Gautam Gowrisankaran (Columbia).</li>
+      <li><strong>Fall 2025 health WIPS:</strong> 10/17 Said Arslan; 10/24 Randy Ellis (BU); 11/21 Rebekah Dix (Yale); 12/12 Seyoun Kim.</li>
+    </ul>
+    </details>
+
+    <details class="fold">
+    <summary>IHEA Digital Health Technology (DHT) SIG Webinars</summary>
+    <ul class="tight">
+      <li>"Costs of Technological Frictions: Evidence from EHR (Non-)Interoperability" &amp; "Sharing is Caring," 2025-11-04, Kelsey Moran (U Miami) &amp; Joe Doyle (MIT) — <a href="https://www.youtube.com/watch?v=KAwfzlMZo98">recording</a>.</li>
+      <li>"Algorithmic Decision-Making in Clinical Care," 2025-05-30 — <a href="https://www.youtube.com/watch?v=XWjrEfU-eQ0">recording</a>.</li>
+      <li>Inaugural webinar, "Digital Innovation in Healthcare," featuring David Cutler (Harvard) &amp; Dan Zeltzer (Tel Aviv), 2024-04-23 — <a href="https://www.youtube.com/watch?v=Ie9UwduBam4">recording</a>.</li>
+    </ul>
+    </details>
+
+    <details class="fold">
+    <summary>AOM Patent Professional Development Workshop</summary>
+    <p><a href="https://patentpdw.wordpress.com/workshops/">Workshop website</a> hosting past content; co-organized and co-chaired the 2023 and 2024 editions.</p>
+    </details>
+  </section>
+
+</main>
+
+<footer>
+  © Lucy Xiaolu Wang 2026
+</footer>
+
+<script>
+  // Light/dark mode: follows your system setting, remembers a manual choice.
+  (function(){
+    var saved = localStorage.getItem("theme");
+    var dark = saved ? saved === "dark"
+                     : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    if (dark) document.documentElement.setAttribute("data-theme","dark");
+    document.getElementById("theme-toggle").addEventListener("click", function(){
+      var nowDark = document.documentElement.getAttribute("data-theme") === "dark";
+      if (nowDark) document.documentElement.removeAttribute("data-theme");
+      else document.documentElement.setAttribute("data-theme","dark");
+      localStorage.setItem("theme", nowDark ? "light" : "dark");
+    });
+  })();
+</script>
+</body>
+</html>
