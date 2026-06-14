@@ -442,6 +442,17 @@
 </footer>
 
 <script>
+  // External links open in new tab; internal links (anchors, local files) stay in same tab.
+  document.addEventListener("click", function(e){
+    var a = e.target.closest("a");
+    if (!a) return;
+    var href = a.getAttribute("href");
+    if (href && href.startsWith("http") && !href.includes(location.hostname)){
+      a.setAttribute("target","_blank");
+      a.setAttribute("rel","noopener");
+    }
+  });
+
   // Theme: DARK by default; visitors can switch to light, choice is remembered.
   (function(){
     var saved = localStorage.getItem("theme");
