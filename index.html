@@ -447,7 +447,7 @@
     var a = e.target.closest("a");
     if (!a) return;
     var href = a.getAttribute("href");
-    if (href && href.startsWith("http") && !href.includes(location.hostname)){
+    if (href && (href.startsWith("http") && !href.includes(location.hostname) || href.endsWith(".pdf"))){
       a.setAttribute("target","_blank");
       a.setAttribute("rel","noopener");
     }
