@@ -1,0 +1,5 @@
+# Local working notes — never publish to the public repo
+CLAUDE.md
+DEPLOY_GUIDE.md
+fetch-assets.sh
+.DS_Store
